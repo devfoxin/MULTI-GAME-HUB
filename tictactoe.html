@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Matrix Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Premium Gaming Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating Ambient Background Strips -->
+    <div class="neon-strip strip-blue"></div>
+    <div class="neon-strip strip-green"></div>
+    <div class="neon-strip strip-red"></div>
+    <div class="cyber-grid"></div>
+
+    <div class="game-container">
+        <!-- Title Header -->
+        <header class="game-header">
+            <h1>TIC-TAC-TOE // <span class="neon-cyan">MATRIX</span></h1>
+            <p>Neural Network Grid Sector 01</p>
+        </header>
+
+        <!-- Premium Neon Scoreboard Tracker -->
+        <div class="scoreboard">
+            <div class="score-card player-x active-turn">
+                <span class="label">PLAYER X</span>
+                <span id="score-x" class="score">0</span>
+            </div>
+            <div class="score-card draws">
+                <span class="label">DRAWS</span>
+                <span id="score-draws" class="score">0</span>
+            </div>
+            <div class="score-card player-o">
+                <span class="label">PLAYER O</span>
+                <span id="score-o" class="score">0</span>
+            </div>
+        </div>
+
+        <!-- System Controls -->
+        <div class="control-panel">
+            <div id="status-text">INITIALIZING QUANTUM GRID...</div>
+            <button id="reset-btn">REBOOT GRID</button>
+        </div>
+
+        <!-- Hardware Accelerated Matrix Grid -->
+        <div class="matrix-box">
+            <div class="grid-board">
+                <div class="matrix-cell" data-index="0"></div>
+                <div class="matrix-cell" data-index="1"></div>
+                <div class="matrix-cell" data-index="2"></div>
+                <div class="matrix-cell" data-index="3"></div>
+                <div class="matrix-cell" data-index="4"></div>
+                <div class="matrix-cell" data-index="5"></div>
+                <div class="matrix-cell" data-index="6"></div>
+                <div class="matrix-cell" data-index="7"></div>
+                <div class="matrix-cell" data-index="8"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
