@@ -1,0 +1,197 @@
+/* --- CSS VARIABLES FOR NEON THEME --- */
+:root {
+    --bg-dark: #020204;
+    --panel-dark: rgba(10, 10, 15, 0.85);
+    --border-color: rgba(255, 255, 255, 0.05);
+    
+    --neon-blue: #00e5ff;
+    --neon-green: #00ff88;
+    --neon-red: #ff0055;
+    --neon-purple: #9d00ff;
+    
+    --text-primary: #ffffff;
+    --text-muted: #888899;
+    --font-header: 'Orbitron', sans-serif; /* Recommended futuristic font */
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- ANIMATED NEON BACKGROUND STRIPS --- */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100vh;
+    top: 0;
+    opacity: 0.15;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* Example: Blue strip */
+body::before {
+    left: 20%;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    animation: floatStrip 8s infinite ease-in-out;
+}
+
+/* Example: Green strip */
+body::after {
+    left: 80%;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+    animation: floatStrip 10s infinite ease-in-out reverse;
+}
+
+@keyframes floatStrip {
+    0%, 100% { transform: translateY(0); opacity: 0.15; }
+    50% { transform: translateY(-20px); opacity: 0.3; }
+}
+
+/* --- APP CONTAINER & LAYOUT --- */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- SIDEBAR (Updated with Neon Accent) --- */
+.sidebar {
+    width: 260px;
+    background: var(--panel-dark);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.logo-area h2 {
+    font-family: var(--font-header);
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo-area h2 span {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-family: var(--font-header);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover:not([disabled]) {
+    border-color: var(--neon-green);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.nav-btn.active {
+    background: rgba(157, 0, 255, 0.1);
+    border-color: var(--neon-purple);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.4);
+}
+
+/* --- HOME SCREEN GAME CARDS --- */
+.main-content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+h1 {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.game-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--panel-dark);
+    border: 2px solid var(--neon-blue); /* Neon border as requested */
+    border-radius: 12px;
+    padding: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Interactive Glowing Effect on Hover */
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.3);
+}
+
+/* Thematic colors for Tic Tac Toe on the home card */
+.ttt-card {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
+}
+
+.card h3 {
+    font-family: var(--font-header);
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.play-btn {
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 10px;
+    border-radius: 6px;
+    font-family: var(--font-header);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card:hover .play-btn {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-green);
+}
