@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Hub</title>
+    <title>Nexus Arcade | Premium Game Hub</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for High-Tech Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Animated Cyber Grid Background Effect -->
+    <div class="bg-grid-overlay"></div>
+
     <div class="app-container">
+        <!-- Premium Sidebar Navigation -->
         <aside class="sidebar">
-            <h2>🕹️ ArcadeHub</h2>
+            <div class="logo-area">
+                <span class="logo-icon">🔮</span>
+                <h2>NEXUS<span>ARCADE</span></h2>
+            </div>
             <nav>
-                <button class="nav-btn active" onclick="switchScreen('home')">Home</button>
-                <button class="nav-btn" onclick="switchScreen('tictactoe')">Tic-Tac-Toe</button>
-                <button class="nav-btn" disabled>More Coming Soon!</button>
+                <button class="nav-btn active" onclick="switchScreen('home')">
+                    <span class="btn-glow"></span>🏠 HOME
+                </button>
+                <button class="nav-btn" onclick="switchScreen('tictactoe')">
+                    <span class="btn-glow"></span>❌ TIC-TAC-TOE
+                </button>
+                <button class="nav-btn disabled-btn" disabled>
+                    🔒 SNAKE.IO (SOON)
+                </button>
             </nav>
         </aside>
 
+        <!-- Main Graphics Stage Area -->
         <main class="main-content">
             
+            <!-- Home Screen -->
             <section id="home-screen" class="screen active">
-                <h1>Welcome to the Game Hub!</h1>
-                <p>Select a game from the sidebar to start playing.</p>
+                <div class="hero-header">
+                    <h1>SELECT YOUR <span class="neon-text">DIMENSION</span></h1>
+                    <p>Immersive browser gaming powered by vanilla architecture.</p>
+                </div>
+                
                 <div class="game-cards">
                     <div class="card" onclick="switchScreen('tictactoe')">
-                        <h3>Tic-Tac-Toe</h3>
-                        <p>Classic 3x3 grid alignment game.</p>
-                        <button class="play-btn">Play Now</button>
+                        <div class="card-banner ttt-banner"></div>
+                        <div class="card-content">
+                            <h3>TIC-TAC-TOE</h3>
+                            <p>Engage in tactical 3-in-a-row matrix warfare.</p>
+                            <button class="play-btn">LAUNCH GAME</button>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Tic-Tac-Toe Screen -->
             <section id="tictactoe-screen" class="screen">
-                <h1>Tic-Tac-Toe</h1>
-                <div class="status-action-row">
-                    <div id="status">Player X's turn</div>
-                    <button id="reset-btn">Reset Game</button>
+                <div class="game-header">
+                    <h1>TIC-TAC-TOE <span class="neon-text-alt">MATRIX</span></h1>
                 </div>
-                <div class="board">
-                    <div class="cell" data-index="0"></div>
-                    <div class="cell" data-index="1"></div>
-                    <div class="cell" data-index="2"></div>
-                    <div class="cell" data-index="3"></div>
-                    <div class="cell" data-index="4"></div>
-                    <div class="cell" data-index="5"></div>
-                    <div class="cell" data-index="6"></div>
-                    <div class="cell" data-index="7"></div>
-                    <div class="cell" data-index="8"></div>
+
+                <div class="game-wrapper">
+                    <div class="status-panel">
+                        <div id="status">INITIALIZING...</div>
+                        <button id="reset-btn">PURGE / RESET</button>
+                    </div>
+                    
+                    <div class="board-shadow-wrapper">
+                        <div class="board">
+                            <div class="cell" data-index="0"></div>
+                            <div class="cell" data-index="1"></div>
+                            <div class="cell" data-index="2"></div>
+                            <div class="cell" data-index="3"></div>
+                            <div class="cell" data-index="4"></div>
+                            <div class="cell" data-index="5"></div>
+                            <div class="cell" data-index="6"></div>
+                            <div class="cell" data-index="7"></div>
+                            <div class="cell" data-index="8"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
